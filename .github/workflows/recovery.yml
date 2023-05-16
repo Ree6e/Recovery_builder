@@ -13,6 +13,8 @@ jobs:
        - name: remove pkg and setting repo
          run: |
             sudo apt update && sudo apt install wget zip
+            curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+            chmod a+x ~/bin/repo
             wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/cleanup.sh  | bash
             sudo -E apt-get -qq update
             sudo apt install gnupg python
